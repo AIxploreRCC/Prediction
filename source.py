@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 from joblib import load
+import pickle
 import io
 import streamlit as st
 import sksurv
