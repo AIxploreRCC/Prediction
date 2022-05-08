@@ -44,14 +44,14 @@ st.markdown("""
 
 def user_input():
     Tumorsize=st.slider("Tumor size", min_value = 0, max_value = 50, value = 80)
-    Preoperative hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
-    Vascular invasion=st.selectbox("Vascular invasion", options = ["0", '1'])
-    Perinephric fat invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
-    Nodal involvement=st.selectbox("Nodal involvement", options = ["0", '1'])
-    Coagulative necrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
-    Sarcomatoid features=st.selectbox("Sarcomatoid features", options = ["0", '1'])
-    ECOG performance status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
-    Nuclear grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
+    Preoperativehemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
+    Vascularinvasion=st.selectbox("Vascular invasion", options = ["0", '1'])
+    Perinephricfatinvasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
+    Nodalinvolvement=st.selectbox("Nodal involvement", options = ["0", '1'])
+    Coagulativenecrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
+    Sarcomatoidfeatures=st.selectbox("Sarcomatoid features", options = ["0", '1'])
+    ECOGperformancestatus=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
+    Nucleargrade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
     dff={'Tumor size':Tumor size,
          'Preoperative hemoglobin':Preoperative hemoglobin,
