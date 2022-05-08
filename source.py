@@ -60,9 +60,8 @@ def user_input():
     ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
     Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
-    resultat = preprocessor.fit_transform(user_input)
     
-    return resultat
+    
 
 df=user_input()
 
