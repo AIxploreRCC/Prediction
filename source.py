@@ -63,3 +63,5 @@ df=user_input()
 
 def predict(df):
   pre=model.predict(df)
+  
+predict (df)
