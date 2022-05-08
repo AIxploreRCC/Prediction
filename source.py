@@ -42,7 +42,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-
+# Loading the Saved Model
+model = load("rsf.pkl")
 
 def user_input():
     Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
@@ -61,8 +62,3 @@ def user_input():
 df=user_input()
 
 
-# Loading the Saved Model
-model = load("rsf.pkl")
-
-
-print (model)
