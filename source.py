@@ -65,3 +65,4 @@ df=user_input()
 model = load("rsf.pkl")
 
 
+print (model)
