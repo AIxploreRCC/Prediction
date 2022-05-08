@@ -43,7 +43,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def user_input():
-    Tumor size=st.slider("Tumor size", min_value = 0, max_value = 50, value = 80)
+    Tumorsize=st.slider("Tumor size", min_value = 0, max_value = 50, value = 80)
     Preoperative hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
     Vascular invasion=st.selectbox("Vascular invasion", options = ["0", '1'])
     Perinephric fat invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
