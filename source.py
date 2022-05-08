@@ -61,6 +61,6 @@ df=user_input()
 
 
 # Loading the Saved Model
-model = load("rsf2.pkl")
+model = load("rsf.pkl")
 
-pred = pd.Series (model.predict(df))
+pred = pd.Series(model.predict(df))
