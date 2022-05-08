@@ -6,9 +6,6 @@ import io
 import streamlit as st
 import sksurv
 from sksurv.ensemble import RandomSurvivalForest
-from sksurv.metrics import (concordance_index_censored,
-                            cumulative_dynamic_auc)
-from sklearn.pipeline import make_pipeline
 
 
 st.set_page_config(page_title="RCC Prognostic Nomogram", page_icon="🐞", layout="centered")
