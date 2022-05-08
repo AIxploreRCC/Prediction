@@ -64,3 +64,4 @@ df=user_input()
 # Loading the Saved Model
 model = load("rsf3.joblib")
 
+pred_prob_adjusted_array = model.predict(df)
