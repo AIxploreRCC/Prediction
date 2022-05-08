@@ -80,6 +80,5 @@ st.write(df.astype('object'))
 # Loading the Saved Model
 model = load("rsf2.joblib")
 
-press_button = st.button("Predict")
-if press_button:
-    result = model.predict(df)
+surv = model.predict_survival_function(df, return_array=True)
+
