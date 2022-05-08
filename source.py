@@ -80,4 +80,4 @@ st.write(df.astype('object'))
 # Loading the Saved Model
 model = load("rsf2.joblib")
 
-CIC_survival = model.predict_survival(df).flatten()
+CIC_survival = model.predict(df).flatten()
