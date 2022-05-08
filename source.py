@@ -43,11 +43,6 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import StandardScaler
-preprocessor = ColumnTransformer([('cat-preprocessor', OrdinalEncoder(), cat_cols),
-    ('standard-scaler', StandardScaler(), scaling_cols)], remainder='passthrough', sparse_threshold=0)
 
 def user_input():
     Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
