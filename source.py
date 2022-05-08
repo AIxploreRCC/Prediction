@@ -77,6 +77,6 @@ st.write(df.astype('object'))
 
 
 # Loading the Saved Model
-model = load("rsf.joblib")
+model = load("rsf2.joblib")
 
 
