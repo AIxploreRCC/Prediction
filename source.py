@@ -61,7 +61,7 @@ def user_input():
 
 df=user_input()
 
-def predict(df):
-  pre=model.predict(df)
-  
-predict (df)
+press_button = st.button("Predict")
+
+if press_button:
+    result = model.predict(df)
