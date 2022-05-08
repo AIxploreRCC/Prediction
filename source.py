@@ -62,7 +62,7 @@ df=user_input()
 
 
 st.subheader('Paramètres pré opératoire')
-st.write(df.astype('object'))
+
 
 
 
