@@ -1,9 +1,13 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import requests
 import io
 import streamlit as st
-import sklearn
-from sklearn.linear_model import LogisticRegression
+import sksurv
+from sksurv.ensemble import RandomSurvivalForest
+from sksurv.metrics import (concordance_index_censored,
+                            cumulative_dynamic_auc)
+from sklearn.pipeline import make_pipeline
 
 
 st.set_page_config(page_title="RCC Prognostic Nomogram", page_icon="🐞", layout="centered")
@@ -38,31 +42,28 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
-username = 'AI_xplore'
-token = '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'
-url = 'https://raw.githubusercontent.com/AIxploreRCC/RCC/main/complications.csv?token=GHSAT0AAAAAABRBZBPW7ZLQ4JWR5QNMHMIYYPWOWVA'
-github_session = requests.Session()
-github_session.auth = (username, token)
-
-@st.cache
-def load_data(nrows):
-    download = github_session.get(url).content
-    data = pd.read_csv(io.StringIO(download.decode('utf-8')))
-    return data
-
-data= load_data(1000)
-
-
-
 def user_input():
-    Age=st.slider("Age", min_value = 21, max_value = 100, value = 80)
-    Sexe=st.selectbox("Sexe", options = ["0", '1'])
-    BMI=st.slider("BMI", min_value = 15, max_value = 40, value = 60)
-    ECOG=st.selectbox("ECOG", options = ["0", '1', '2', '3'])
-    dff={'Age':Age,
-          'Sexe':Sexe,
-          'BMI':BMI,
-          'ECOG': ECOG
+    Tumor size=st.slider("Tumor size", min_value = 0, max_value = 50, value = 80)
+    Preoperative hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
+    Vascular invasion=st.selectbox("Vascular invasion", options = ["0", '1'])
+    Perinephric fat invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
+    Nodal involvement=st.selectbox("Nodal involvement", options = ["0", '1'])
+    Coagulative necrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
+    Sarcomatoid features=st.selectbox("Sarcomatoid features", options = ["0", '1'])
+    ECOG performance status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
+    Nuclear grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
+    Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
+    dff={'Tumor size':Tumor size,
+         'Preoperative hemoglobin':Preoperative hemoglobin,
+         'Vascular invasion':Vascular invasion,
+         'Perinephric fat invasion':Perinephric fat invasion,
+         'Nodal involvement':Nodal involvement,
+         'Coagulative necrosis':Coagulative necrosis,
+         'Sarcomatoid features':Sarcomatoid features,
+         'ECOG performance status': ECOG performance status,
+         'Nuclear grade':Nuclear grade,
+         'Histology':Histology
+         
     }
     resultat=pd.DataFrame(dff,index=[0])
     return resultat
@@ -70,43 +71,12 @@ def user_input():
 df=user_input()
 
 
-
 st.subheader('Paramètres pré opératoire')
 st.write(df.astype('object'))
 
 
 
-data= load_data(100)
-
-from sklearn.impute import KNNImputer
-import numpy as np
-imputer2= KNNImputer(missing_values=np.nan, n_neighbors=1)
-data2 = pd.DataFrame(imputer2.fit_transform(data),columns = data.columns)
+# Loading the Saved Model
+model = load("rsf.joblib")
 
 
-
-
-
-X=data2[['Age','Sexe','BMI', 'ECOG']]
-y=data2['Complication']
-
-clf=LogisticRegression()
-LR=clf.fit(X, y)
-
-key_thresh = 0.6    
-
-pred_prob_adjusted_array = LR.predict_proba(df)
-pred_prob_adjusted = round(pred_prob_adjusted_array[0,1],2)
-
-# assign class
-if pred_prob_adjusted < key_thresh :
-    pred_class = "Positive"
-    biopsy = "No"
-else:
-    pred_class = "Negative"
-    biopsy = "Yes"
-
-st.subheader("Risque de complication:")
-
-st.write("Probability of complications", round(1- pred_prob_adjusted,2))
-st.write('Recommend for avoid surgery:', biopsy)
