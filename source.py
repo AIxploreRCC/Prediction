@@ -80,5 +80,4 @@ st.write(df.astype('object'))
 # Loading the Saved Model
 model = load("rsf2.joblib")
 
-surv = model.predict_survival_function(df, return_array=True)
 
