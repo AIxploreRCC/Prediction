@@ -61,11 +61,6 @@ def user_input():
 df=user_input()
 
 
-st.subheader('Paramètres pré opératoire')
-
-
-
-
 # Loading the Saved Model
 model = load("rsf3.joblib")
 
