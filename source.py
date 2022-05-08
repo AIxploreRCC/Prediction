@@ -64,6 +64,6 @@ df=user_input()
 
 
 # Loading the Saved Model
-model = load("rsf.pkl")
+model = load("rsf2.pkl")
 
 pred_prob_adjusted_array = model.predict(df)
