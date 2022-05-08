@@ -43,12 +43,7 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OrdinalEncoder
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-preprocessor = ColumnTransformer([('cat-preprocessor', OrdinalEncoder(), cat_cols),
-    ('standard-scaler', StandardScaler(), scaling_cols)], remainder='passthrough', sparse_threshold=0)
+
 
 
 def user_input():
