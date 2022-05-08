@@ -80,4 +80,3 @@ st.write(df.astype('object'))
 # Loading the Saved Model
 model = load("rsf3.joblib")
 
-CIC_survival = model.predict(df)
