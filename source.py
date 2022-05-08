@@ -43,6 +43,12 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OrdinalEncoder
+from sklearn.preprocessing import StandardScaler
+preprocessor = ColumnTransformer([('cat-preprocessor', OrdinalEncoder(), cat_cols),
+    ('standard-scaler', StandardScaler(), scaling_cols)], remainder='passthrough', sparse_threshold=0)
+
 def user_input():
     Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
     Preoperative_hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
@@ -54,6 +60,7 @@ def user_input():
     ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
     Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
+    resultat = preprocessor.fit_transform(user_input)
     
     return resultat
 
