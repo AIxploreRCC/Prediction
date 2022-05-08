@@ -48,21 +48,21 @@ def user_input():
     Preoperative_hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
     Vascular_invasion=st.selectbox("Vascular invasion", options = ["0", '1'])
     Perinephric_fat_invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
-    Nodalinvolvement=st.selectbox("Nodal involvement", options = ["0", '1'])
-    Coagulativenecrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
-    Sarcomatoidfeatures=st.selectbox("Sarcomatoid features", options = ["0", '1'])
-    ECOGperformancestatus=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
-    Nucleargrade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
+    Nodal_involvement=st.selectbox("Nodal involvement", options = ["0", '1'])
+    Coagulative_necrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
+    Sarcomatoid_features=st.selectbox("Sarcomatoid features", options = ["0", '1'])
+    ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
+    Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
     dff={'Tumor size':Tumor_size,
          'Preoperative hemoglobin':Preoperative_hemoglobin,
          'Vascular invasion':Vascular_invasion,
          'Perinephric fat invasion':Perinephric_fat_invasion,
-         'Nodal involvement':Nodalinvolvement,
-         'Coagulative necrosis':Coagulativenecrosis,
-         'Sarcomatoid features':Sarcomatoidfeatures,
-         'ECOG performance status': ECOGperformancestatus,
-         'Nuclear grade':Nucleargrade,
+         'Nodal involvement':Nodal_involvement,
+         'Coagulative necrosis':Coagulative_necrosis,
+         'Sarcomatoid features':Sarcomatoid_features,
+         'ECOG performance status': ECOG_performance_status,
+         'Nuclear grade':Nuclear_grade,
          'Histology':Histology
          
     }
