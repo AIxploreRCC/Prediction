@@ -53,15 +53,15 @@ def user_input():
     ECOGperformancestatus=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
     Nucleargrade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
-    dff={'Tumor size':Tumor size,
-         'Preoperative hemoglobin':Preoperative hemoglobin,
-         'Vascular invasion':Vascular invasion,
-         'Perinephric fat invasion':Perinephric fat invasion,
-         'Nodal involvement':Nodal involvement,
-         'Coagulative necrosis':Coagulative necrosis,
-         'Sarcomatoid features':Sarcomatoid features,
-         'ECOG performance status': ECOG performance status,
-         'Nuclear grade':Nuclear grade,
+    dff={'Tumor size':Tumorsize,
+         'Preoperative hemoglobin':Preoperativehemoglobin,
+         'Vascular invasion':Vascularinvasion,
+         'Perinephric fat invasion':Perinephricfatinvasion,
+         'Nodal involvement':Nodalinvolvement,
+         'Coagulative necrosis':Coagulativenecrosis,
+         'Sarcomatoid features':Sarcomatoidfeatures,
+         'ECOG performance status': ECOGperformancestatus,
+         'Nuclear grade':Nucleargrade,
          'Histology':Histology
          
     }
