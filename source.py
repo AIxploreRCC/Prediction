@@ -45,18 +45,21 @@ st.markdown("""
 # Loading the Saved Model
 model = load("rsf.pkl")
 
-def user_input():
-    Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
-    Preoperative_hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
-    Vascular_invasion=st.selectbox("Vascular invasion", options = ["0", '1'])
-    Perinephric_fat_invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
-    Nodal_involvement=st.selectbox("Nodal involvement", options = ["0", '1'])
-    Coagulative_necrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
-    Sarcomatoid_features=st.selectbox("Sarcomatoid features", options = ["0", '1'])
-    ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
-    Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
-    Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
-    dff={'Tumor_size':Tumor_size,
+# get inputs
+
+Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
+Preoperative_hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
+Vascular_invasion=st.selectbox("Vascular invasion", options = ["0", '1'])
+Perinephric_fat_invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
+Nodal_involvement=st.selectbox("Nodal involvement", options = ["0", '1'])
+Coagulative_necrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
+Sarcomatoid_features=st.selectbox("Sarcomatoid features", options = ["0", '1'])
+ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
+Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
+Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
+    
+  
+dff= pd.DataFrame ({'Tumor_size':Tumor_size,
           'Preoperative_hemoglobin':Preoperative_hemoglobin,
           'Vascular_invasion':Vascular_invasion,
           'Perinephric_fat_invasion':Perinephric_fat_invasion,
@@ -66,12 +69,8 @@ def user_input():
           'ECOG_performance_status':ECOG_performance_status,
           'Histology':Histology,
           'Nuclear_grade': Nuclear_grade
-    }
-    resultat=pd.DataFrame(dff)
-    return resultat
+    })
+  
     
 
-press_button = st.button("Predict")
-
-if press_button:
-    result = model.predict(resultat)
+y_pred = model.predict(dff)
