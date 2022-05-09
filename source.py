@@ -78,7 +78,7 @@ dff = pd.DataFrame (
 surv = model.predict(dff)
 
 st.write(surv)
-    
-surv2 = model.predict_survival_function(dff, return_array=True)
 
-st.write(surv2)
+if st.sidebar.button('Submit'):
+    surv2 = model.predict_survival_function(dff, return_array=True)
+    st.write(surv2)
