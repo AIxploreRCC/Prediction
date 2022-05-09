@@ -75,5 +75,5 @@ dff = pd.DataFrame (
     }
 )
     
-surv = model.predict(dff, return_array=True)
+surv = model.predict(dff)
 
