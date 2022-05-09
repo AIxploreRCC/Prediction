@@ -8,6 +8,9 @@ import io
 import streamlit as st
 import sksurv
 from sksurv.ensemble import RandomSurvivalForest
+from sksurv.nonparametric import kaplan_meier_estimator
+from sksurv.util import Surv
+
 
 
 st.set_page_config(page_title="RCC Prognostic Nomogram", page_icon="🐞", layout="centered")
