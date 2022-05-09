@@ -85,14 +85,13 @@ st.write(surv)
 pred_surv = model.predict_survival_function(dff, return_array=True)
 
 
-st.write(""
+st.write("")
 
-for i, s in enumerate(pred_surv):
-    plt.step(model.event_times_, s, where="post", label=str(i))
-plt.ylabel("Survival probability")
-plt.xlabel("Time in days")
-plt.legend()
-plt.grid(True)
+  for i, s in enumerate(pred_surv):
+     plt.step(model.event_times_, s, where="post", label=str(i))
+  plt.ylabel("Survival probability")
+  plt.xlabel("Time in days")
+  plt.legend()
+  plt.grid(True)
          
-         '''')
 
