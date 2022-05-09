@@ -86,5 +86,9 @@ event_times_ = np.arange(1, 120)
 
 st.write(surv2)
 
-for s in surv2:
-    plt.step(event_times_, s (event_times_), where="post")
+for s in enumerate(surv2):
+    plt.step(model.event_times_, s, where="post")
+plt.ylabel("Survival probability")
+plt.xlabel("Time in days")
+plt.legend()
+plt.grid(True)
