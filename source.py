@@ -71,10 +71,11 @@ dff = pd.DataFrame (
           'ECOG_performance_status':[ECOG_performance_status],
           'Histology':[Histology],
           'Nuclear_grade': [Nuclear_grade]
-    }
+    },
+  columns = data.columns
 )
     
-data2 = pd.DataFrame(dff,columns = data.columns)
 
-pred_prob_adjusted_array = model.predict (data2)
+
+pred_prob_adjusted_array = model.predict (dff)
 
