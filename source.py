@@ -80,7 +80,7 @@ surv = model.predict(dff)
 
 st.write(surv)
 
-surv2 = model.predict_survival_function(dff)
+surv2 = model.predict_survival_function(dff, return_array=True)
 
 for s in enumerate(surv2):
     plt.step(model.event_times_, s, where="post")
