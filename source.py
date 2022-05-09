@@ -43,7 +43,7 @@ st.markdown("""
 
 
 # Loading the Saved Model
-model = joblib.load('rsf.pkl')
+model = joblib.load('rsf2.pkl')
 
 # get inputs
 
