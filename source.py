@@ -8,10 +8,7 @@ import io
 import streamlit as st
 import sksurv
 from sksurv.ensemble import RandomSurvivalForest
-from sksurv.nonparametric import kaplan_meier_estimator
-from sksurv.util import Surv
-from sksurv.functions import StepFunction
-from sklearn.pipeline import make_pipeline
+
 
 
 
@@ -91,7 +88,7 @@ pred_surv = model.predict_survival_function(dff, return_array=True)
 
 
 for i, s in enumerate(pred_surv):
-    plt.step(rsf.event_times_, s, where="post", label=str(i))
+    plt.step(model.event_times_, s, where="post", label=str(i))
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
 plt.legend()
