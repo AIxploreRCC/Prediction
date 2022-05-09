@@ -79,6 +79,6 @@ surv = model.predict(dff)
 
 st.write(surv)
 
-if st.sidebar.button('Submit'):
+if st.button('Submit'):
     surv2 = model.predict_survival_function(dff, return_array=True)
     st.write(surv2)
