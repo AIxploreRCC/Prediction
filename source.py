@@ -85,7 +85,7 @@ if st.button('Submit'):
     surv2 = model.predict_survival_function(dff, return_array=True)
     
     for i, s in enumerate(surv2):
-    plt.step(model.event_times_, s, where="post", label=str(i))
+      plt.step(model.event_times_, s, where="post", label=str(i))
     
     # Displaying the functions
     fig, ax = plt.subplots()
