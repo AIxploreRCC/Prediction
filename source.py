@@ -80,13 +80,15 @@ surv = model.predict(dff)
 st.write(surv)
 
 if st.button('Submit'):
-    surv2 = model.predict_survival_function(dff, return_array=True)
     st.write(surv2)
+    # CKD progression-free survival
+    surv2 = model.predict_survival_function(dff, return_array=True)
+    # Displaying the functions
+    fig, ax = plt.subplots()
+    plt.plot(model.times, CKD_survival, color='blue', lw=2, ls='-')
+    # Axis labels
+     plt.xlabel('Time from baseline assessment (years)')
+     plt.ylabel('RRT-free survival (%)')
     
-for i, s in enumerate(surv2):
-    plt.step(model.event_times_, s, where="post", label=str(i))
-plt.ylabel("Survival probability")
-plt.xlabel("Time in days")
-plt.legend()
-plt.grid(True)
     
+
