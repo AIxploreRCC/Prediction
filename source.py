@@ -81,5 +81,9 @@ st.write(surv)
 
 surv2 = model.predict_survival_function(dff, return_array=True)
 
+# Displaying the functions
+fig, ax = plt.subplots()
+plt.plot(model.times, surv2, color='blue', lw=2, ls='-')
+
     
 
