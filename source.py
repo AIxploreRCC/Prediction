@@ -93,7 +93,7 @@ plt.xlabel("Time in days")
 
 # Tick labels
 plt.xlim(0, 60)
-xlabel = ('0', '12', '24', '36', '48', '60')
+x_positions = (0, 12, 24, 36, 48, 60)
 plt.legend()
 plt.grid(True)
 
