@@ -77,4 +77,6 @@ dff = pd.DataFrame (
 def survie (model, Tumor_size=2, Preoperative_hemoglobin=10, Vascular_invasion=0, Perinephric_fat_invasion=0, Nodal_involvement=0, Coagulative_necrosis=0, Sarcomatoid_features=0, ECOG_performance_status=0, Nuclear_grade=1, Histology=1):
   x=np.array([Tumor_size, Preoperative_hemoglobin, Vascular_invasion, Perinephric_fat_invasion, Nodal_involvement, Coagulative_necrosis, Sarcomatoid_features, ECOG_performance_status, Nuclear_grade, Histology]).reshape (1,10)
   print (model.predict(x))
+  
+survie (model)
 
