@@ -86,5 +86,5 @@ event_times_ = np.arange(1, 120)
 
 st.write(surv2)
 
-for s in enumerate(surv2):
-    plt.step(model.event_times_, s, where="post")
+for surv2 in surv_fns::
+    plt.step(event_times_, surv2 (event_times_), where="post")
