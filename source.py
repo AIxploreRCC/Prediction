@@ -71,9 +71,7 @@ def user_input():
     return resultat
     
 
-df=user_input()
-
 press_button = st.button("Predict")
 
 if press_button:
-    result = model.predict(dff)
+    result = model.predict(resultat)
