@@ -74,9 +74,9 @@ dff = pd.DataFrame (
     }
 )
 
-features = pd.DataFrame(dff, index=[0])
+features =np.array([Tumor_size, Preoperative_hemoglobin, Vascular_invasion, Perinephric_fat_invasion, Nodal_involvement, Coagulative_necrosis, Sarcomatoid_features, ECOG_performance_status, Nuclear_grade, Histology]).reshape (1,10)
     
 
 
-pred_prob_adjusted_array = model.predict (dff)
-pred_prob_adjusted = round(pred_prob_adjusted_array[0,1],2)
+pred_prob_adjusted_array = model.predict (features)
+
