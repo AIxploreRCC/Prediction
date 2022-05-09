@@ -83,7 +83,7 @@ surv = model.predict(dff)
 st.write(surv)
 
 
-st.write (Disease Free Survival (DFS) Probability)
+st.write (Disease Free Survival Probability)
 
 pred_surv = model.predict_survival_function(dff, return_array=True)
 
