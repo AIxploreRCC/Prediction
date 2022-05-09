@@ -73,10 +73,8 @@ dff = pd.DataFrame (
           'Nuclear_grade': [Nuclear_grade]
     }
 )
-
-features =np.array([Tumor_size, Preoperative_hemoglobin, Vascular_invasion, Perinephric_fat_invasion, Nodal_involvement, Coagulative_necrosis, Sarcomatoid_features, ECOG_performance_status, Nuclear_grade, Histology]).reshape (1,10)
     
+data2 = pd.DataFrame(dff,columns = data.columns)
 
-
-pred_prob_adjusted_array = model.predict (features)
+pred_prob_adjusted_array = model.predict (data2)
 
