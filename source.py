@@ -10,6 +10,8 @@ import sksurv
 from sksurv.ensemble import RandomSurvivalForest
 from sksurv.nonparametric import kaplan_meier_estimator
 from sksurv.util import Surv
+from sksurv.functions import StepFunction
+from sklearn.pipeline import make_pipeline
 
 
 
