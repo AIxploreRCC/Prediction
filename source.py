@@ -81,8 +81,5 @@ st.write(surv)
 
 surv2 = model.predict_survival_function(dff, return_array=True)
 
-for fn in surv2:
-   plt.step(fn.dff, fn(fn.dff), where="post")
-    
     
 
