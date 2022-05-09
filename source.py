@@ -85,14 +85,14 @@ surv = model.predict(dff)
 
 st.write(surv)
 
-surv_funcs = model.predict_survival_function(dff, return_array=True)
+pred_surv = model.predict_survival_function(dff, return_array=True)
 
 st.write(surv_funcs)
 
-event_times_ = np.arange(1, 1000)
+event_times_ = np.arange(1, 100)
 
-for s in enumerate(surv_funcs):
-    plt.step(event_times_, surv_funcs (event_times_), where="post")
+
+plt.step(event_times_, surv_funcs (pred_surv), where="post")
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
 plt.legend()
