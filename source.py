@@ -88,8 +88,4 @@ st.write(surv2)
 surv3 = pd.DataFrame (surv2)
 
 
-plt.step(model.event_times_,s, where="post")
-plt.ylabel("Survival probability")
-plt.xlabel("Time in days")
-plt.legend()
-plt.grid(True)
+st.write(surv3)
