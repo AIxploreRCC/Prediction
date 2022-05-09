@@ -89,3 +89,5 @@ surv3 = pd.DataFrame (surv2)
 
 
 st.write(surv3)
+
+surv3.plot()
