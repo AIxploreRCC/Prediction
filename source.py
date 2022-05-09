@@ -43,7 +43,7 @@ st.markdown("""
 
 
 # Loading the Saved Model
-model = load('rsf2.pkl')
+model = load('rsf2.pkl', 'rb')
 
 # get inputs
 
