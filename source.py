@@ -88,4 +88,9 @@ fig, ax = plt.subplots()
 
 
     
-
+for s in enumerate(surv2):
+    plt.step(rsf.event_times_, s, where="post")
+plt.ylabel("Survival probability")
+plt.xlabel("Time in days")
+plt.legend()
+plt.grid(True)
