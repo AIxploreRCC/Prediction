@@ -85,7 +85,7 @@ st.write(surv2)
 
 # Displaying the functions
 fig, ax = plt.subplots()
-plt.step(model.event_times_, s)
+plt.step(model.event_times_, surv2)
 
     
 
