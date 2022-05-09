@@ -59,17 +59,20 @@ Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
 Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
     
   
-dff= pd.DataFrame ({'Tumor_size':Tumor_size,
-          'Preoperative_hemoglobin':Preoperative_hemoglobin,
-          'Vascular_invasion':Vascular_invasion,
-          'Perinephric_fat_invasion':Perinephric_fat_invasion,
-          'Nodal_involvement':Nodal_involvement,
-          'Coagulative_necrosis':Coagulative_necrosis,
-          'Sarcomatoid_features':Sarcomatoid_features,
-          'ECOG_performance_status':ECOG_performance_status,
-          'Histology':Histology,
-          'Nuclear_grade': Nuclear_grade
-    })
+dff = pd.DataFrame (
+  {
+          'Tumor_size':[Tumor_size],
+          'Preoperative_hemoglobin':[Preoperative_hemoglobin],
+          'Vascular_invasion':[Vascular_invasion],
+          'Perinephric_fat_invasion':[Perinephric_fat_invasion],
+          'Nodal_involvement':[Nodal_involvement],
+          'Coagulative_necrosis':[Coagulative_necrosis],
+          'Sarcomatoid_features':[Sarcomatoid_features],
+          'ECOG_performance_status':[ECOG_performance_status],
+          'Histology':[Histology],
+          'Nuclear_grade': [Nuclear_grade]
+    }
+)
   
     
 
