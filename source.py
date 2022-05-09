@@ -85,6 +85,13 @@ surv_funcs = model.predict_survival_function(dff, return_array=True)
 st.write(surv_funcs)
 
 
+for fn in surv_funcs:
 
+   plt.step(fn.x, fn(fn.x), where="post")
+
+
+plt.ylim(0, 1)
+
+plt.show()
 
 
