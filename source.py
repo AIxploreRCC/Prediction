@@ -108,6 +108,8 @@ dq= pd.DataFrame (pred_surv)
 
 st.write(dq)
 
-beta= dq.iloc[:, [5, 11, 23, 35, 41, 60]]
+st.markdown ("Disease Free Survival Probability")
+
+beta= dq.iloc[:, [6, 12, 24, 36, 48, 60]]
 
 st.write(beta)
