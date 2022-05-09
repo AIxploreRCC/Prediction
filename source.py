@@ -77,3 +77,4 @@ dff = pd.DataFrame (
     
 surv = model.predict(dff)
 
+st.write(surv)
