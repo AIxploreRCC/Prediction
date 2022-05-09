@@ -84,16 +84,9 @@ if st.button('Submit'):
     # progression-free survival
     surv2 = model.predict_survival_function(dff, return_array=True)
     
-    for i, s in enumerate(surv2):
-      plt.step(model.event_times_, s, where="post", label=str(i))
-    
-    # Displaying the functions
-    fig, ax = plt.subplots()
-   
-    
-    # Axis labels
-    plt.xlabel('Time from baseline assessment (years)')
-    plt.ylabel('RRT-free survival (%)')
+    for fn in surv_funcs:
+
+        plt.step(fn.x, fn(fn.x), where="post")
     
     
 
