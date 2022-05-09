@@ -77,9 +77,14 @@ dff = pd.DataFrame (
     
 surv = model.predict_survival_function(dff, return_array=True)
 
-for i, s in enumerate(surv):
-    plt.step(model.event_times_, s, where="post", label=str(i))
-plt.ylabel("Survival probability")
-plt.xlabel("Time in days")
-plt.legend()
-plt.grid(True)
+key_thresh = 0.6 
+
+# assign class
+if surv < key_thresh :
+    pred_class = "Positive"
+    biopsy = "No"
+else:
+    pred_class = "Negative"
+    biopsy = "Yes"
+
+st.subheader("Risque de complication:")
