@@ -90,13 +90,10 @@ surv_funcs = model.predict_survival_function(dff, return_array=True)
 st.write(surv_funcs)
 
 
-for fn in surv_funcs:
-
-   plt.step(fn.x, fn(fn.x), where="post")
-
-
-plt.ylim(0, 1)
-
-plt.show()
-
+for i, s in enumerate(surv_funcs):
+    plt.step(model.event_times_, s, where="post")
+plt.ylabel("Survival probability")
+plt.xlabel("Time in days")
+plt.legend()
+plt.grid(True)
 
