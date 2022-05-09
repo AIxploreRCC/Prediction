@@ -104,3 +104,4 @@ plt.grid(True)
 st.pyplot (fig)
          
 
+st.write(pred_surv)
