@@ -90,8 +90,8 @@ surv_funcs = model.predict_survival_function(dff, return_array=True)
 st.write(surv_funcs)
 
 
-for i, s in enumerate(surv_funcs):
-    plt.step(event_times_, surv_funcs, where="post")
+for s in enumerate(surv_funcs):
+    plt.step(event_times_, surv_funcs (event_times_), where="post")
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
 plt.legend()
