@@ -80,3 +80,5 @@ surv = model.predict(dff)
 st.write(surv)
     
 surv2 = model.predict_survival_function(dff, return_array=True)
+
+st.write(surv2)
