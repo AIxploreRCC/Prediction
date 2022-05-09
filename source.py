@@ -87,7 +87,7 @@ st.write(surv)
 
 pred_surv = model.predict_survival_function(dff, return_array=True)
 
-st.write(surv_funcs)
+
 
 event_times_ = np.arange(1, 100)
 
