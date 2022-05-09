@@ -83,4 +83,4 @@ surv2 = model.predict_survival_function(dff, return_array=True)
 
 st.write(surv2)
 
-plt.step(time, surv2, where="post")
+plt.step(time, predict_survival_function, where="post")
