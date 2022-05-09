@@ -87,8 +87,8 @@ if st.button('Submit'):
     fig, ax = plt.subplots()
     plt.plot(model.times, CKD_survival, color='blue', lw=2, ls='-')
     # Axis labels
-     plt.xlabel('Time from baseline assessment (years)')
-     plt.ylabel('RRT-free survival (%)')
+    plt.xlabel('Time from baseline assessment (years)')
+    plt.ylabel('RRT-free survival (%)')
     
     
 
