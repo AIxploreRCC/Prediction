@@ -85,6 +85,8 @@ surv2 = model.predict_survival_function(dff, return_array=True)
 
 st.write(surv2)
 
+dff = pd.DataFrame (surv2)
+
 
 plt.step(model.event_times_,s, where="post")
 plt.ylabel("Survival probability")
