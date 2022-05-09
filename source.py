@@ -83,14 +83,4 @@ surv2 = model.predict_survival_function(dff, return_array=True)
 
 st.write(surv2)
 
-# Displaying the functions
-fig, ax = plt.subplots()
-
-
-    
-for s in enumerate(surv2):
-    plt.step(model.event_times_, s, where="post")
-plt.ylabel("Survival probability")
-plt.xlabel("Time in days")
-plt.legend()
-plt.grid(True)
+plt.step(time, surv2, where="post")
