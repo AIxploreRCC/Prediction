@@ -73,7 +73,8 @@ dff = pd.DataFrame (
           'Nuclear_grade': [Nuclear_grade]
     }
 )
-  
+
+features = pd.DataFrame(dff, index=[0])
     
 
 y_pred = model.predict(dff)
