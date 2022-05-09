@@ -78,5 +78,5 @@ features = pd.DataFrame(dff, index=[0])
     
 
 
-pred_prob_adjusted_array = model.predict_proba(dff)
+pred_prob_adjusted_array = model.predict dff)
 pred_prob_adjusted = round(pred_prob_adjusted_array[0,1],2)
