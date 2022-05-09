@@ -107,3 +107,5 @@ st.pyplot (fig)
 st.write(pred_surv)
 
 dq= pd.DataFrame (pred_surv)
+
+st.write(dq)
