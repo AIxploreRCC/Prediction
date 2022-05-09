@@ -77,8 +77,6 @@ dff = pd.DataFrame (
 features = pd.DataFrame(dff, index=[0])
     
 
-y_pred = model.predict(dff)
 
-st.subheader('Prediction')
-result = np.array(['You likely did not survive.','You likely survived!'])
-st.write(result[y_pred][0])
+pred_prob_adjusted_array = model.predict_proba(dff)
+pred_prob_adjusted = round(pred_prob_adjusted_array[0,1],2)
