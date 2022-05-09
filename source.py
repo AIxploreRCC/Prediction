@@ -76,3 +76,10 @@ dff = pd.DataFrame (
 )
     
 surv = model.predict_survival_function(dff, return_array=True)
+
+for i, s in enumerate(surv):
+    plt.step(rsf.event_times_, s, where="post", label=str(i))
+plt.ylabel("Survival probability")
+plt.xlabel("Time in days")
+plt.legend()
+plt.grid(True)
