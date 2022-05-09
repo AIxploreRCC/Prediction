@@ -86,7 +86,7 @@ if st.button('Submit'):
     
     # Displaying the functions
     fig, ax = plt.subplots()
-    plt.plot(model.times, surv2, color='blue', lw=2, ls='-')
+    plt.plot(model.event_times_, surv2, color='blue', lw=2, ls='-')
     
     # Axis labels
     plt.xlabel('Time from baseline assessment (years)')
