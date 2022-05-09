@@ -86,8 +86,8 @@ event_times_ = np.arange(1, 120)
 
 st.write(surv2)
 
-for s in surv2:
-    plt.step(model.event_times_, s, where="post")
+
+plt.step(model.times, surv2)
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
 plt.legend()
