@@ -104,8 +104,10 @@ plt.grid(True)
 st.pyplot (fig)
          
 
-st.write(pred_surv)
-
 dq= pd.DataFrame (pred_surv)
 
 st.write(dq)
+
+beta= dq.iloc[:, [5, 11, 23, 35, 41, 60]]
+
+st.write(beta)
