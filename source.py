@@ -90,6 +90,9 @@ for i, s in enumerate(pred_surv):
     plt.step(model.event_times_, s, where="post", label=str(i))
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
+
+# Tick labels
+plt.xlim(0, 60)
 xlabel = ('0', '12', '24', '36', '48', '60')
 plt.legend()
 plt.grid(True)
