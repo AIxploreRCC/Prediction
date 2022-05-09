@@ -89,8 +89,8 @@ fig, ax = plt.subplots()
 for i, s in enumerate(pred_surv):
     plt.step(model.event_times_, s, where="post", label=str(i))
 plt.ylabel("Survival probability")
-y_labels = ('0', '12', '24', '36', '48', '60')
 plt.xlabel("Time in days")
+xlabel = ('0', '12', '24', '36', '48', '60')
 plt.legend()
 plt.grid(True)
 
