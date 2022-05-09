@@ -75,4 +75,4 @@ dff = pd.DataFrame (
     }
 )
     
-
+surv = rsf.predict_survival_function(dff, return_array=True)
