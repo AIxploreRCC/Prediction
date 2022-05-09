@@ -94,4 +94,24 @@ f=surv3.plot()
 
 st.write(f)
 
+st.write("""""")
 
+# Axis labels
+        plt.xlabel('Time from baseline assessment (years)')
+        plt.ylabel('CKD progression-free survival (%)')
+
+# Tick labels
+        plt.ylim(0, 1.05)
+        y_positions = (0, 0.2, 0.4, 0.6, 0.8, 1)
+        y_labels = ('0', '20', '40', '60', '80', '100')
+        plt.yticks(y_positions, y_labels, rotation=0)
+        plt.xlim(0, 4000)
+        x_positions = (0, 365, 1095, 1825, 3650)
+        x_labels = ('0', '1', '3', '5', '10')
+        plt.xticks(x_positions, x_labels, rotation=0)
+
+        # Tick vertical lines
+        plt.axvline(x=365, color='black', ls='--', alpha=0.2)
+        plt.axvline(x=1095, color='black', ls='--', alpha=0.2)
+        plt.axvline(x=1825, color='black', ls='--', alpha=0.2)
+        plt.axvline(x=3650, color='black', ls='--', alpha=0.2)
