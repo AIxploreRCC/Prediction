@@ -50,7 +50,7 @@ st.markdown("""
 
 # Loading the Saved Model
 
-model = load('rsf(1).joblib')
+model = load('rsf(2).joblib')
 
 # get inputs
 
@@ -89,10 +89,9 @@ pred_surv = model.predict_survival_function(dff, return_array=True)
 
 
 
-event_times_ = np.arange(1, 100)
 
-
-plt.step(event_times_, surv_funcs (pred_surv), where="post")
+for i, s in enumerate(pred_surv):
+    plt.step(rsf.event_times_, s, where="post", label=str(i))
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
 plt.legend()
