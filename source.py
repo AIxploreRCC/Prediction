@@ -77,4 +77,5 @@ dff = pd.DataFrame (
     
 surv = model.predict(dff)
 
-st.write(surv)
+if st.sidebar.button('Submit'):
+  st.write(surv)
