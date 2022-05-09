@@ -84,8 +84,7 @@ if st.button('Submit'):
     # progression-free survival
     surv2 = model.predict_survival_function(dff, return_array=True)
     
-    for fn in surv_funcs:
-
+    for fn in surv2:
         plt.step(fn.x, fn(fn.x), where="post")
     
     
