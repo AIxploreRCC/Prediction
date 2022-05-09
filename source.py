@@ -71,8 +71,7 @@ dff = pd.DataFrame (
           'ECOG_performance_status':[ECOG_performance_status],
           'Histology':[Histology],
           'Nuclear_grade': [Nuclear_grade]
-    },
-  columns = data.columns
+    }
 )
     
 def survie (model, Tumor_size=2, Preoperative_hemoglobin=10, Vascular_invasion=0, Perinephric_fat_invasion=0, Nodal_involvement=0, Coagulative_necrosis=0, Sarcomatoid_features=0, ECOG_performance_status=0, Nuclear_grade=1, Histology=1):
