@@ -56,7 +56,20 @@ def user_input():
     ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
     Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
-    
+    dff={'Tumor_size':Tumor_size,
+          'Preoperative_hemoglobin':Preoperative_hemoglobin,
+          'BMI':BMI,
+          'Vascular_invasion':Vascular_invasion,
+          'Perinephric_fat_invasion':Perinephric_fat_invasion,
+          'Nodal_involvement':Nodal_involvement,
+          'Coagulative_necrosis':Coagulative_necrosis,
+          'Sarcomatoid_features':Sarcomatoid_features,
+          'ECOG_performance_status':ECOG_performance_status,
+          'Histology':Histology,
+          'Nuclear_grade': Nuclear_grade
+    }
+    resultat=pd.DataFrame(dff)
+    return resultat
     
 
 df=user_input()
@@ -64,4 +77,4 @@ df=user_input()
 press_button = st.button("Predict")
 
 if press_button:
-    result = model.predict(df)
+    result = model.predict(dff)
