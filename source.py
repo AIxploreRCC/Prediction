@@ -80,7 +80,7 @@ surv = model.predict(dff)
 st.write(surv)
 
 if st.button('Submit'):
-    st.write(surv2)
+    st.write("""""")
     # progression-free survival
     surv2 = model.predict_survival_function(dff, return_array=True)
     
