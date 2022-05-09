@@ -81,11 +81,13 @@ st.write(surv)
 
 if st.button('Submit'):
     st.write(surv2)
-    # CKD progression-free survival
+    # progression-free survival
     surv2 = model.predict_survival_function(dff, return_array=True)
+    
     # Displaying the functions
     fig, ax = plt.subplots()
-    plt.plot(model.times, CKD_survival, color='blue', lw=2, ls='-')
+    plt.plot(model.times, surv2, color='blue', lw=2, ls='-')
+    
     # Axis labels
     plt.xlabel('Time from baseline assessment (years)')
     plt.ylabel('RRT-free survival (%)')
