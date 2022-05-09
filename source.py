@@ -82,7 +82,6 @@ st.write(surv)
 
 surv2 = model.predict_survival_function(dff, return_array=True)
 
-event_times_ = np.arange(1, 120)
 
 st.write(surv2)
 
