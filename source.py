@@ -58,7 +58,6 @@ def user_input():
     Histology=st.selectbox("Histology", options = ["1", '2', '3', '4'])
     dff={'Tumor_size':Tumor_size,
           'Preoperative_hemoglobin':Preoperative_hemoglobin,
-          'BMI':BMI,
           'Vascular_invasion':Vascular_invasion,
           'Perinephric_fat_invasion':Perinephric_fat_invasion,
           'Nodal_involvement':Nodal_involvement,
