@@ -91,7 +91,7 @@ st.write(surv_funcs)
 
 
 for i, s in enumerate(surv_funcs):
-    plt.step(model.event_times_, s, where="post")
+    plt.step(event_times_, surv_funcs, where="post")
 plt.ylabel("Survival probability")
 plt.xlabel("Time in days")
 plt.legend()
