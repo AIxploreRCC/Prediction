@@ -110,7 +110,7 @@ st.write("""""")
         x_labels = ('0', '1', '3', '5', '10')
         plt.xticks(x_positions, x_labels, rotation=0)
 
-        # Tick vertical lines
+# Tick vertical lines
         plt.axvline(x=365, color='black', ls='--', alpha=0.2)
         plt.axvline(x=1095, color='black', ls='--', alpha=0.2)
         plt.axvline(x=1825, color='black', ls='--', alpha=0.2)
