@@ -75,16 +75,5 @@ dff = pd.DataFrame (
     }
 )
     
-surv = model.predict_survival_function(dff, return_array=True)
+surv = model.predict(dff, return_array=True)
 
-key_thresh = 0.6 
-
-# assign class
-if surv < key_thresh :
-    pred_class = "Positive"
-    biopsy = "No"
-else:
-    pred_class = "Negative"
-    biopsy = "Yes"
-
-st.subheader("Risque de complication:")
