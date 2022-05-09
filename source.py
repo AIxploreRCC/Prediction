@@ -80,18 +80,10 @@ surv = model.predict(dff)
 
 st.write(surv)
 
-surv2 = model.predict_survival_function(dff, return_array=True)
+surv_funcs = model.predict_survival_function(dff, return_array=True)
 
-st.write(surv2)
+st.write(surv_funcs)
 
-event_times_=np.array ([1,2)]
-
-
-plt.step(model.event_times_, surv2, where="post")
-plt.ylabel("Survival probability")
-plt.xlabel("Time in days")
-plt.grid(True)
-plt.legend()
 
 
 
