@@ -44,7 +44,7 @@ st.markdown("""
 
 # Loading the Saved Model
 
-model = joblib.load('rsf(1).joblib')
+model = load('rsf(1).joblib')
 
 # get inputs
 
