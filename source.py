@@ -56,9 +56,9 @@ def format_func_yn(option):
     return CHOICES [option]
   
 Histology2 = { 
-    4: "Arizona - Phoenix - 4",
-    3: "New Jersey - Newark -3",
-    2: "Oregon - Portland - 2",
+    4: "Other,
+    3: "chRCC",
+    2: "pRCC",
     1: "RCC",
     }   
   
