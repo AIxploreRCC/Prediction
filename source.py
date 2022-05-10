@@ -58,7 +58,7 @@ def format_func_yn(option):
 
 Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
 Preoperative_hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
-Vascular_invasion=st.selectbox("Vascular invasion", options=list(CHOICES.keys()))
+Vascular_invasion=st.selectbox("Vascular invasion", options=list(CHOICES.keys()), format_func=format_func_yn, index=1)
 Perinephric_fat_invasion=st.selectbox("Perinephric fat invasion", options = ["0", '1'])
 Nodal_involvement=st.selectbox("Nodal involvement", options = ["0", '1'])
 Coagulative_necrosis=st.selectbox("Coagulative necrosis", options = ["0", '1'])
