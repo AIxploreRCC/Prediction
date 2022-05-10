@@ -51,9 +51,16 @@ model = load('rsf(2).joblib')
 
 # Define choices and labels for feature inputs
 CHOICES = {0: 'No', 1: 'Yes'}
-CHOICES2 = {1: 'RCC', 2: 'pRCC', 3: 'chRCC', 4: 'other'}
+
 def format_func_yn(option):
-    return CHOICES CHOICES2 [option]
+    return CHOICES [option]
+  
+Histology = { 
+    4: "Arizona - Phoenix - 4",
+    3: "New Jersey - Newark -3",
+    2: "Oregon - Portland - 2",
+    1: "RCC",
+    }   
   
 
 # get inputs
@@ -67,7 +74,10 @@ Coagulative_necrosis=st.selectbox("Coagulative necrosis", options=list(CHOICES.k
 Sarcomatoid_features=st.selectbox("Sarcomatoid features", options=list(CHOICES.keys()), format_func=format_func_yn, index=1)
 ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
 Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
-Histology=st.selectbox("Histology", options=list(CHOICES2.keys()), format_func=format_func_yn, index=1)
+Histology=st.selectbox("Histology", label="Choose a city option:",
+    options= (4, 3, 2, 1), 
+    format_func=lambda x: city_options.get(x),
+    )   
     
   
 dff = pd.DataFrame (
