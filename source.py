@@ -121,8 +121,6 @@ surv = model.predict(dff)
 
 st.write(surv)
 
-st.form_submit_button(label='Submit')
-
 st.markdown ("Disease Free Survival Probability")
 
 pred_surv = model.predict_survival_function(dff, return_array=True)
