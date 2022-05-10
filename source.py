@@ -95,7 +95,7 @@ dff = pd.DataFrame (
 
 #Preprocessing
 
-dff["ECOG performance status"]=pd.Categorical(df["ECOG performance status"],ordered=True)
+dff["ECOG performance status"]=pd.Categorical(dff["ECOG performance status"],ordered=True)
 
 
 
