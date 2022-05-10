@@ -109,7 +109,7 @@ dff["Vascular_invasion"]=pd.Categorical(dff["Vascular_invasion"],ordered=False)
 scaling_cols = [c for c in dff if dff[c].dtype.kind in ['i', 'f']]
 cat_cols = [c for c in dff if dff[c].dtype.kind not in ["i", "f"]]
 
-rom sklearn.compose import ColumnTransformer
+from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.preprocessing import StandardScaler
 preprocessor = ColumnTransformer([('cat-preprocessor', OrdinalEncoder(), cat_cols),
