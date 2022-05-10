@@ -108,7 +108,7 @@ st.markdown ("Disease Free Survival Probability")
 
 times = np.arange(6, 61, 6)
 
-sf_surv_prob = np.row_stack([
+rsf_surv_prob = np.row_stack([
     fn(times)
     for fn in model.predict_survival_function(dff, return_array=False)
 ])
