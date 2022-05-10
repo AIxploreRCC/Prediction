@@ -55,7 +55,7 @@ CHOICES = {0: 'No', 1: 'Yes'}
 def format_func_yn(option):
     return CHOICES [option]
   
-Histology = { 
+Histology2 = { 
     4: "Arizona - Phoenix - 4",
     3: "New Jersey - Newark -3",
     2: "Oregon - Portland - 2",
@@ -74,9 +74,7 @@ Coagulative_necrosis=st.selectbox("Coagulative necrosis", options=list(CHOICES.k
 Sarcomatoid_features=st.selectbox("Sarcomatoid features", options=list(CHOICES.keys()), format_func=format_func_yn, index=1)
 ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
 Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
-Histology=st.selectbox("Histology", label="Choose a city option:",
-    options= (4, 3, 2, 1), 
-    format_func=lambda x: city_options.get(x),
+Histology=st.selectbox("Histology", options= (4, 3, 2, 1), format_func=lambda x: Histology2.get(x),
     )   
     
   
