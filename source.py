@@ -92,6 +92,23 @@ dff = pd.DataFrame (
           'Nuclear_grade': [Nuclear_grade]
     }
 )
+
+#Preprocessing
+
+dff["ECOG performance status"]=pd.Categorical(df["ECOG performance status"],ordered=True)
+
+
+
+dff["Histology"]=pd.Categorical(df["Histology"],ordered=False)
+dff["Nodal involvement"]=pd.Categorical(df["Nodal involvement"],ordered=False)
+dff["Nuclear grade"]=pd.Categorical(df["Nuclear grade"],ordered=False)
+
+dff["Perinephric fat invasion"]=pd.Categorical(df["Perinephric fat invasion"],ordered=False)
+
+dff["Coagulative necrosis"]=pd.Categorical(df["Coagulative necrosis"],ordered=False)
+dff["Sarcomatoid features"]=pd.Categorical(df["Sarcomatoid features"],ordered=False)
+dff["Vascular invasion"]=pd.Categorical(df["Vascular invasion"],ordered=False)
+
     
 surv = model.predict(dff)
 
