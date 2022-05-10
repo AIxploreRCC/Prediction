@@ -47,7 +47,7 @@ st.markdown("""
 
 # Loading the Saved Model
 
-model = load('rsf(2).joblib')
+model = load('rsfp.joblib')
 
 # Define choices and labels for feature inputs
 CHOICES = {0: 'No', 1: 'Yes'}
