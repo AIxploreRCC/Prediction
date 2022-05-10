@@ -99,15 +99,15 @@ dff["ECOG performance status"]=pd.Categorical(df["ECOG performance status"],orde
 
 
 
-dff["Histology"]=pd.Categorical(df["Histology"],ordered=False)
-dff["Nodal involvement"]=pd.Categorical(df["Nodal involvement"],ordered=False)
-dff["Nuclear grade"]=pd.Categorical(df["Nuclear grade"],ordered=False)
+dff["Histology"]=pd.Categorical(dff["Histology"],ordered=False)
+dff["Nodal involvement"]=pd.Categorical(dff["Nodal involvement"],ordered=False)
+dff["Nuclear grade"]=pd.Categorical(dff["Nuclear grade"],ordered=False)
 
-dff["Perinephric fat invasion"]=pd.Categorical(df["Perinephric fat invasion"],ordered=False)
+dff["Perinephric fat invasion"]=pd.Categorical(dff["Perinephric fat invasion"],ordered=False)
 
-dff["Coagulative necrosis"]=pd.Categorical(df["Coagulative necrosis"],ordered=False)
-dff["Sarcomatoid features"]=pd.Categorical(df["Sarcomatoid features"],ordered=False)
-dff["Vascular invasion"]=pd.Categorical(df["Vascular invasion"],ordered=False)
+dff["Coagulative necrosis"]=pd.Categorical(dff["Coagulative necrosis"],ordered=False)
+dff["Sarcomatoid features"]=pd.Categorical(dff["Sarcomatoid features"],ordered=False)
+dff["Vascular invasion"]=pd.Categorical(dff["Vascular invasion"],ordered=False)
 
     
 surv = model.predict(dff)
