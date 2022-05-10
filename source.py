@@ -55,8 +55,8 @@ def format_func_yn(option):
     return CHOICES[option]
   
 CHOICES2 = {1: 'RCC', 2: 'pRCC', 3: 'chRCC', 4: 'other'}
-def format_func_yn2(option2):
-    return CHOICES2[option2]
+def format_func_yn2(option):
+    return CHOICES2[option]
   
 
 # get inputs
