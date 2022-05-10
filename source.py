@@ -49,6 +49,11 @@ st.markdown("""
 
 model = load('rsf(2).joblib')
 
+# Define choices and labels for feature inputs
+CHOICES = {0: 'No', 1: 'Yes'}
+def format_func_yn(option):
+    return CHOICES[option]
+
 # get inputs
 
 Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
