@@ -109,6 +109,8 @@ dff["Vascular_invasion"]=pd.Categorical(dff["Vascular_invasion"],ordered=False)
 scaling_cols = [c for c in dff if dff[c].dtype.kind in ['i', 'f']]
 cat_cols = [c for c in dff if dff[c].dtype.kind not in ["i", "f"]]
 
+st.write (scaling_cols)
+
     
 surv = model.predict(dff)
 
