@@ -104,12 +104,15 @@ plt.grid(True)
 st.pyplot (fig)
          
 
-dq= pd.DataFrame (pred_surv)
-
-st.write(dq)
-
 st.markdown ("Disease Free Survival Probability")
 
-beta= dq.iloc[:, [6, 12, 24, 36, 48, 60]]
+times = np.arange(6, 61, 6)
 
-st.write(beta)
+sf_surv_prob = np.row_stack([
+    fn(times)
+    for fn in model.predict_survival_function(dff, return_array=False)
+])
+
+DFS_table = pd.DataFrame(rsf_surv_prob, columns = times)
+
+st.write (DFS_table)
