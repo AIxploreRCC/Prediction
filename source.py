@@ -95,19 +95,12 @@ dff = pd.DataFrame (
 
 #Preprocessing
 
-dff["ECOG performance status"]=pd.Categorical(dff["ECOG performance status"],ordered=True)
+
 
 
 
 dff["Histology"]=pd.Categorical(dff["Histology"],ordered=False)
-dff["Nodal involvement"]=pd.Categorical(dff["Nodal involvement"],ordered=False)
-dff["Nuclear grade"]=pd.Categorical(dff["Nuclear grade"],ordered=False)
 
-dff["Perinephric fat invasion"]=pd.Categorical(dff["Perinephric fat invasion"],ordered=False)
-
-dff["Coagulative necrosis"]=pd.Categorical(dff["Coagulative necrosis"],ordered=False)
-dff["Sarcomatoid features"]=pd.Categorical(dff["Sarcomatoid features"],ordered=False)
-dff["Vascular invasion"]=pd.Categorical(dff["Vascular invasion"],ordered=False)
 
     
 surv = model.predict(dff)
