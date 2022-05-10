@@ -95,11 +95,16 @@ dff = pd.DataFrame (
 
 #Preprocessing
 
-
-
-
-
 dff["Histology"]=pd.Categorical(dff["Histology"],ordered=False)
+dff["ECOG_performance_status"]=pd.Categorical(dff["ECOG_performance_status"],ordered=True)
+dff["Histology"]=pd.Categorical(dff["Histology"],ordered=False)
+dff["Nodal_involvement"]=pd.Categorical(dff["Nodal_involvement"],ordered=False)
+dff["Nuclear_grade"]=pd.Categorical(dff["Nuclear_grade"],ordered=False)
+dff["Perinephric_fat_invasion"]=pd.Categorical(dff["Perinephric_fat_invasion"],ordered=False)
+dff["Coagulative_necrosis"]=pd.Categorical(dff["Coagulative_necrosis"],ordered=False)
+dff["Sarcomatoid_features"]=pd.Categorical(dff["Sarcomatoid_features"],ordered=False)
+dff["Vascular_invasion"]=pd.Categorical(dff["Vascular_invasion"],ordered=False)
+
 
 
     
