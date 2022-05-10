@@ -56,7 +56,7 @@ def format_func_yn(option):
     return CHOICES [option]
   
 Histology2 = { 
-    4: "Other,
+    4: "Other",
     3: "chRCC",
     2: "pRCC",
     1: "RCC",
