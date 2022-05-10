@@ -70,7 +70,7 @@ Coagulative_necrosis=st.selectbox("Coagulative necrosis", options=list(CHOICES.k
 Sarcomatoid_features=st.selectbox("Sarcomatoid features", options=list(CHOICES.keys()), format_func=format_func_yn, index=1)
 ECOG_performance_status=st.selectbox("ECOG performance status", options = ["0", '1', '2', '3'])
 Nuclear_grade=st.selectbox("Nuclear grade", options = ["1", '2', '3', '4'])
-Histology=st.selectbox("Histology", options2=list(CHOICES2.keys()), format_func=format_func_yn2, index=1)
+Histology=st.selectbox("Histology", options2=list(CHOICES2.keys()), format_func2=format_func_yn2, index=1)
     
   
 dff = pd.DataFrame (
