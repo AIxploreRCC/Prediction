@@ -8,6 +8,7 @@ import io
 import streamlit as st
 import sksurv
 from sksurv.ensemble import RandomSurvivalForest
+from sklearn.pipeline import make_pipeline
 
 
 
