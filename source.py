@@ -60,7 +60,7 @@ Histology2 = {
     4: "Other",
     3: "chRCC",
     2: "pRCC",
-    1: "RCC",
+    1: "cRCC",
     }   
   
 
