@@ -66,7 +66,7 @@ Histology2 = {
 
 # get inputs
 
-Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 50, value = 20)
+Tumor_size=st.slider("Tumor size", min_value = 1, max_value = 20, value = 10)
 Preoperative_hemoglobin=st.slider("Preoperative hemoglobin", min_value = 5, max_value = 20, value = 10)
 Vascular_invasion=st.selectbox("Vascular invasion", options=list(CHOICES.keys()), format_func=format_func_yn, index=1)
 Perinephric_fat_invasion=st.selectbox("Perinephric fat invasion", options=list(CHOICES.keys()), format_func=format_func_yn, index=1)
